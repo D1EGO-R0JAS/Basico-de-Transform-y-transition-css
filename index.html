@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de Transform y Transition</title>
+</head>
+<style>
+    .container{
+        width: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:25px;
+        margin: 20px auto;
+        background-color: burlywood;
+        border-radius: 20%;
+    }
+    .draw{
+        width: 100%;
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+    }
+    .circle{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .trasladar{
+        background-color: aqua;        
+	    transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 0.6s;
+    }
+    .container:hover .trasladar{
+        transform: translateX(90px);
+    }
+    .escalar{
+        background-color: blueviolet;        
+	    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: 0.2s;
+    }
+    .container:hover .escalar{
+        transform: scale(1.5);
+    }
+    .cuadrado{
+        width: 60px;
+        height: 60px;
+    }
+    .rotar{
+        background-color: brown;
+        transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 0.6s;
+    }
+    .container:hover .rotar{
+        transform: rotate(180deg);
+    }
+    .inclinar{
+        background-color: black;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: 0.2s;
+    }
+    .container:hover .inclinar{
+        transform: skew(40deg);
+    }
+    .rotar2{
+        background-color: chartreuse;
+        transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 0.6s;
+        transform-origin: left bottom;
+    }
+    .container:hover .rotar2{
+        transform: rotate(360deg);
+    }
+    ul{
+        list-style: none;
+    }
+    ul.cat-sal,ul.cat-dul,ul.cat-pic, .sal ul{
+        opacity:0;
+    }
+    .sal:hover ul.cat-sal{
+        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 1s;
+    }
+    .mar:hover .cat-mar{
+        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 1s;
+    }
+    .dul:hover ul.cat-dul{
+        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay: 1s;
+    }
+    .pic:hover ul.cat-pic{
+        opacity: 1;
+        transition: opacity 1s cubic-bezier(0.45, 0, 0.55, 1);
+        transition-delay:1s;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="title"><h1>Bienvenido</h1></div>
+        <div class="draw">
+            <div class="circle trasladar"></div>
+            <div class="circle escalar"></div>
+            <div class="cuadrado rotar"></div>
+            <div class="cuadrado inclinar"></div>
+            <div class="cuadrado rotar2"></div>
+            <ul class="cat1">
+                <li class="sal">Sal<ul class="cat-sal">
+                    <li class="mar">Comida de Mar<ul class="cat-mar">
+                        <li>salmon</li>
+                        <li>camarones</li>
+                        <li>robalo</li>
+                    </ul></li>
+                    <li>Comida Vegana</li>
+                    <li>Carnes</li>
+                </ul></li>
+                <li class="dul">Dulce<ul class="cat-dul">
+                    <li>helados</li>
+                    <li>chescacke</li>
+                    <li>Brownies</li>
+                </ul></li>
+                <li class="pic">Picante<ul class="cat-pic">
+                    <li>mexicana</li>
+                    <li>mediterranea</li>
+                    <li>asiatica</li>
+                </ul></li>
+            </ul>            
+        </div>
+        <div class="info"><h2>Revise que le gustaria consumir</h2></div>
+    </div>    
+</body>
+</html>
